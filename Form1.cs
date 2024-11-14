@@ -271,10 +271,14 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     teamkittypetechid = JerseyHelpers.FindLastJerseyByTeam(list, jersey.teamtechid) + 1,
                     teamtechid = jersey.teamtechid,
                     year = jersey.year,
-                    JZus = jersey.JZus,
-                    Rjqb = jersey.Rjqb,
-                    wsGP = jersey.wsGP,
-                    ZqLl = jersey.ZqLl,
+                    jerseynameoutlinecolorb = jersey.jerseynameoutlinecolorb,
+                    jerseynameoutlinecolorg = jersey.jerseynameoutlinecolorg,
+                    jerseynameoutlinecolorr = jersey.jerseynameoutlinecolorr,
+                    jerseynameoutlinewidth = jersey.jerseynameoutlinewidth,
+                    //JZus = jersey.JZus,
+                    //Rjqb = jersey.Rjqb,
+                    //wsGP = jersey.wsGP,
+                    //ZqLl = jersey.ZqLl,
                 });
                 ShowKitOfTeams();
             }
@@ -909,10 +913,14 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     shortstyle = 0,
                     jerseyfit = 0,
                     jerseyrestriction = 0,
-                    JZus = 0,
-                    Rjqb = 0,
-                    wsGP = 0,
-                    ZqLl = 0,
+                    jerseynameoutlinecolorb = 0,
+                    jerseynameoutlinecolorg = 0,
+                    jerseynameoutlinecolorr = 0,
+                    jerseynameoutlinewidth = 0,
+                    //JZus = 0,
+                    //Rjqb = 0,
+                    //wsGP = 0,
+                    //ZqLl = 0,
 
                 });
                 list.Add(new Jersey
@@ -981,10 +989,14 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     shortstyle = 0,
                     jerseyfit = 0,
                     jerseyrestriction = 0,
-                    JZus = 0,
-                    Rjqb = 0,
-                    wsGP = 0,
-                    ZqLl = 0,
+                    jerseynameoutlinecolorb = 0,
+                    jerseynameoutlinecolorg = 0,
+                    jerseynameoutlinecolorr = 0,
+                    jerseynameoutlinewidth = 0,
+                    //JZus = 0,
+                    //Rjqb = 0,
+                    //wsGP = 0,
+                    //ZqLl = 0,
                 });
                 list.Add(new Jersey
                 {
@@ -1052,10 +1064,14 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     shortstyle = 0,
                     jerseyfit = 0,
                     jerseyrestriction = 0,
-                    JZus = 0,
-                    Rjqb = 0,
-                    wsGP = 0,
-                    ZqLl = 0,
+                    jerseynameoutlinecolorb = 0,
+                    jerseynameoutlinecolorg = 0,
+                    jerseynameoutlinecolorr = 0,
+                    jerseynameoutlinewidth = 0,
+                    //JZus = 0,
+                    //Rjqb = 0,
+                    //wsGP = 0,
+                    //ZqLl = 0,
                 });
                 MessageBox.Show(Localization.teamadded);
 
@@ -1138,10 +1154,14 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     teamkittypetechid = jersey.teamkittypetechid,
                     teamtechid = jersey.teamtechid,
                     year = jersey.year,
-                    JZus = jersey.JZus,
-                    Rjqb = jersey.Rjqb,
-                    wsGP = jersey.wsGP,
-                    ZqLl = jersey.ZqLl,
+                    jerseynameoutlinecolorg=jersey.jerseynameoutlinecolorg,
+                    jerseynameoutlinewidth=jersey.jerseynameoutlinewidth,
+                    jerseynameoutlinecolorr = jersey.jerseynameoutlinecolorr,
+                    jerseynameoutlinecolorb = jersey.jerseynameoutlinecolorb,
+                    //JZus = jersey.JZus,
+                    //Rjqb = jersey.Rjqb,
+                    //wsGP = jersey.wsGP,
+                    //ZqLl = jersey.ZqLl,
                 }.ToString());
                 MessageBox.Show(Localization.Başarıyla_kaydedildi_);
             }

@@ -72,10 +72,15 @@ namespace EAFC24_Teamkits_Editor_WinForms.Classes
         public int shortstyle { get; set; }
         public int jerseyfit { get; set; }
         public int jerseyrestriction { get; set; }
-        public int wsGP { get; set; }
-        public int Rjqb { get; set; }
-        public int JZus { get; set; }
-        public int ZqLl { get; set; }
+        //public int wsGP { get; set; }
+        //public int Rjqb { get; set; }
+        //public int JZus { get; set; }
+        //public int ZqLl { get; set; }
+        public int jerseynameoutlinewidth { get; set; }
+        public int jerseynameoutlinecolorr { get; set; }
+        public int jerseynameoutlinecolorg { get; set; }
+        public int jerseynameoutlinecolorb { get; set; }
+
 
     }
 }
