@@ -77,10 +77,10 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     }
 
                     list.Add(teamKit);
-                
-            
 
-                count++;
+
+
+                    count++;
                 }
                 listBox1.DataSource = list.GroupBy(x => x.teamtechid).Select(x => x.Key).ToArray();
                 listBox1.DisplayMember = "teamtechid";
@@ -844,7 +844,12 @@ namespace EAFC24_Teamkits_Editor_WinForms
 
         private void button20_Click(object sender, EventArgs e)
         {
-            if (list.Where(x => x.teamtechid == Convert.ToInt32(textBox46.Text)).ToList().Count == 0)
+            AddNewTeamAndKits(textBox46.Text,false);
+        }
+
+        private void AddNewTeamAndKits(string teamId,bool isMulti)
+        {
+            if (list.Where(x => x.teamtechid == Convert.ToInt32(teamId)).ToList().Count == 0)
             {
 
                 list.Add(new Jersey
@@ -903,7 +908,7 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     teamcolorsecpercent = 40,
                     year = 0,
                     captainarmband = 76,
-                    teamtechid = Convert.ToInt32(textBox46.Text),
+                    teamtechid = Convert.ToInt32(teamId),
                     isembargoed = 0,
                     hasadvertisingkit = 0,
                     dlc = 0,
@@ -979,7 +984,7 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     teamcolorsecpercent = 40,
                     year = 0,
                     captainarmband = 76,
-                    teamtechid = Convert.ToInt32(textBox46.Text),
+                    teamtechid = Convert.ToInt32(teamId),
                     isembargoed = 0,
                     hasadvertisingkit = 0,
                     dlc = 0,
@@ -1054,7 +1059,7 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     teamcolorsecpercent = 40,
                     year = 0,
                     captainarmband = 76,
-                    teamtechid = Convert.ToInt32(textBox46.Text),
+                    teamtechid = Convert.ToInt32(teamId),
                     isembargoed = 0,
                     hasadvertisingkit = 0,
                     dlc = 0,
@@ -1073,11 +1078,12 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     //wsGP = 0,
                     //ZqLl = 0,
                 });
+                if(!isMulti)
                 MessageBox.Show(Localization.teamadded);
 
 
             }
-            else
+            else 
                 MessageBox.Show(Localization.teamexist);
         }
 
@@ -1154,8 +1160,8 @@ namespace EAFC24_Teamkits_Editor_WinForms
                     teamkittypetechid = jersey.teamkittypetechid,
                     teamtechid = jersey.teamtechid,
                     year = jersey.year,
-                    jerseynameoutlinecolorg=jersey.jerseynameoutlinecolorg,
-                    jerseynameoutlinewidth=jersey.jerseynameoutlinewidth,
+                    jerseynameoutlinecolorg = jersey.jerseynameoutlinecolorg,
+                    jerseynameoutlinewidth = jersey.jerseynameoutlinewidth,
                     jerseynameoutlinecolorr = jersey.jerseynameoutlinecolorr,
                     jerseynameoutlinecolorb = jersey.jerseynameoutlinecolorb,
                     //JZus = jersey.JZus,
@@ -1173,6 +1179,26 @@ namespace EAFC24_Teamkits_Editor_WinForms
         private void button22_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog2.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                //MessageBox.Show(openFileDialog1.FileName);
+                var newFile = File.ReadAllLines(openFileDialog2.FileName);
+                foreach (var item in newFile)
+                {
+                    AddNewTeamAndKits(item,true);
+                }
+                MessageBox.Show("Teams added successfully");
+            }
+            else
+            {
+                MessageBox.Show(Localization.Lütfen_teamkits_dosyası_açın, Localization.Hata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
